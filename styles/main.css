@@ -288,10 +288,124 @@ header .cart h3 {
   inline-size: 70%;
 }
 
+.popup {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 440px;
+  height: 100%;
+  background-color: var(--clr-white);
+  z-index: 100;
+  border-radius: 24px 0px 0px 24px;
+  box-shadow: 0px 0px 48px 0px rgba(0, 0, 0, 0.08);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+.popup .ppinfo {
+  margin: 48px 40px 40px 40px;
+}
+.popup .ppinfo .price {
+  margin-bottom: 32px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  gap: 8px;
+}
+.popup .ppinfo .price h1 {
+  margin: 0;
+  color: var(--clr-db);
+  font-family: var(--fnt-family-eczar);
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%; /* 48px */
+}
+.popup .ppinfo .price p {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%; /* 28.8px */
+  align-self: flex-start;
+  margin: 0;
+  border-radius: 16px;
+  background: var(--orange, #F73);
+  color: var(--clr-white);
+  font-family: var(--fnt-family-eczar);
+  text-align: center;
+  max-width: 63px;
+  max-height: 29px;
+  padding: 4px 4px 0px 4px;
+}
+.popup .ppinfo img {
+  justify-self: flex-start;
+}
+.popup .ppinfo ul {
+  list-style: none;
+  padding: 0;
+}
+.popup .ppinfo ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  margin: 16px 0px;
+}
+.popup .ppinfo ul li h4 {
+  margin: 0;
+  color: var(--clr-db);
+  font-family: var(--fnt-family-opensans);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%; /* 16.8px */
+}
+.popup .ppinfo ul li p {
+  margin: 0;
+  color: var(--clr-orange2);
+  font-family: var(--fnt-family-opensans);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%; /* 16.8px */
+}
+.popup .ppinfo .line1 {
+  margin: 32px 0px 24px 0px;
+  width: 100%;
+  height: 2px;
+  background-color: #F0F0F0;
+}
+.popup .ppinfo .line2 {
+  margin: 16px 0px;
+  width: 100%;
+  height: 2px;
+  background-color: #F0F0F0;
+}
+.popup .ppinfo button {
+  margin-top: 100px;
+  border-radius: 64px;
+  border: 2px solid var(--clr-orange2);
+  background-color: transparent;
+  color: var(--clr-db);
+  text-align: center;
+  font-family: var(--fnt-family-opensans);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 16px; /* 114.286% */
+  text-transform: uppercase;
+  padding: 16px 24px;
+  width: 100%;
+  height: 100%;
+}
+
 :root {
   --clr-lc: #FEF2E8;
   --clr-db: #023A6B;
-  --clr-orang: #FF7733;
+  --clr-orange: #FF7733;
+  --clr-orange2: #F73;
   --clr-white: #FFF;
   --fnt-size-h1: 48px;
   --fnt-size-h2: 36px;
