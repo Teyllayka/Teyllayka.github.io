@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Eczar:wght@400;500;600;700;800&display=swap");
+
 
 :root {
    --clr-lc: #FEF2E8;
@@ -75,7 +78,7 @@ header {
          font-style: normal;
          font-weight: 700;
          line-height: 57.6px; /* 57.6px */
-         inline-size: 55%;
+         inline-size: 70%;
       }
 
       .products {
@@ -85,6 +88,13 @@ header {
          
          padding: 0;
          margin:0;
+
+         @media screen and (max-width: 1100px) {
+            display: grid;
+            row-gap: 100px;
+            columns: unset;
+            column-gap: unset;
+        }
 
          li {
             form {
