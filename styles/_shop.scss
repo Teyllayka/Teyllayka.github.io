@@ -24,7 +24,6 @@
          list-style: none;
          columns: 3;
          column-gap: 48px;
-         
          padding: 0;
          margin:0;
 
@@ -80,13 +79,10 @@
                         max-width: 42px;
                         max-height: 20px;
                         padding: 3px 2px 0px 2px;
-                        
-                        
                        
                      }
-
-                     
                   }
+
                   .options {
                      display: flex;
                      flex-direction: column;
@@ -110,6 +106,15 @@
                            cursor: pointer;
                            height: 0;
                            width: 0;
+
+                           &:checked ~ .checkmark {
+                              background-color: #F73;
+                           }
+
+
+                           &:checked ~ .checkmark:after {
+                              display: block;
+                           }
                         }
 
                         .checkmark {
@@ -120,6 +125,18 @@
                            width: 24px;
                            background-color: #fff;
                            border-radius: 10px;
+
+                           &::after {
+                              left: 9px;
+                              top: 5px;
+                              width: 5px;
+                              height: 10px;
+                              border: solid white;
+                              border-width: 0 3px 3px 0;
+                              -webkit-transform: rotate(45deg);
+                              -ms-transform: rotate(45deg);
+                              transform: rotate(45deg);
+                           }
                         }
                         
 
@@ -136,39 +153,23 @@
                            text-transform: uppercase;
 
                         }
-                      }
 
-                     .sugar:hover input ~ .checkmark {
-                        background-color: #F73;
-                     }
-                      
-                     .sugar input:checked ~ .checkmark {
-                        background-color: #F73;
-                     }
-                      
-                     .sugar:after {
-                        content: "";
-                        position: absolute;
-                        display: none;
-                     }
-                      
-                     .sugar input:checked ~ .checkmark:after {
-                        display: block;
-                     }
-                      
-                     .sugar .checkmark:after {
-                        left: 9px;
-                        top: 5px;
-                        width: 5px;
-                        height: 10px;
-                        border: solid white;
-                        border-width: 0 3px 3px 0;
-                        -webkit-transform: rotate(45deg);
-                        -ms-transform: rotate(45deg);
-                        transform: rotate(45deg);
-                     }
-                      
+                        &::after {
+                           content: "";
+                           position: absolute;
+                           display: none;
+                        }
 
+                        &:hover {
+                           input ~ .checkmark {
+                              background-color: #F73;
+
+                           }
+                        }
+
+                        
+                     }
+                
                      .ratios {
                         display: flex;
                         justify-content: flex-start;
@@ -188,6 +189,14 @@
                               position: absolute;
                               opacity: 0;
                               cursor: pointer;
+
+                              &:checked ~ .radio {
+                                 background-color: #fff;
+                              }
+
+                              &:checked ~ .radio:after {
+                                 display: block;
+                              }
                            }
 
                            .radio {
@@ -198,6 +207,18 @@
                               width: 25px;
                               background-color: #fff;
                               border-radius: 50%;
+
+                              &::after {
+                                 content: "";
+                                 position: absolute;
+                                 display: none;
+                                 top: 5px;
+                                 left: 5px;
+                                 width: 15px;
+                                 height: 15px;
+                                 border-radius: 50%;
+                                 background: #F73;
+                              }
                            }
 
                            p {
@@ -212,34 +233,12 @@
                               text-transform: uppercase;
    
                            }
-                        }
-                         
-                
-                        .ratio:hover input ~ .radio {
-                           background-color: #F73;
-                        }
-                         
-                        .ratio input:checked ~ .radio {
-                           background-color: #fff;
-                        }
-                         
-                        .radio:after {
-                           content: "";
-                           position: absolute;
-                           display: none;
-                        }
-                         
-                        .ratio input:checked ~ .radio:after {
-                           display: block;
-                        }
-                         
-                        .ratio .radio:after {
-                           top: 5px;
-                           left: 5px;
-                           width: 15px;
-                           height: 15px;
-                           border-radius: 50%;
-                           background: #F73;
+
+                           &:hover {
+                              input ~ .radio {
+                                 background-color: #F73;
+                              }
+                           }
                         }
                      }
                      
@@ -254,6 +253,7 @@
                      }
                   }
                }
+
                .atc {
                   display: flex;
                   align-items: center;
@@ -272,8 +272,6 @@
                      text-transform: uppercase;
                      padding: 16px 24px;
                   }
-
-                 
                }
             }
          }
