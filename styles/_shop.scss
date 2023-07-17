@@ -1,64 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Eczar:wght@400;500;600;700;800&display=swap");
-
-
-:root {
-   --clr-lc: #FEF2E8;
-   --clr-db: #023A6B;
-   --clr-orang: #FF7733;
-   --clr-white: #FFF;
-
-   --fnt-size-h1: 48px;
-   --fnt-size-h2: 36px;
-   --fnt-size-h3: 24px;
-   --fnt-size-p: 18px;
-
-   --animation-dur: 0.5s ease;
-
-   --fnt-family-poppins: "Poppins", sans-serif;
-   --fnt-family-monsterrat: "Montserrat", sans-serif;
-}
-
-
-
-body {
-   margin: auto;
-   background-color: var(--clr-lc);
-}
-
-
-header {
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   flex-direction: row;
-   background-color: white;
-   height: 96px;
-   padding: 0px 32px;
-
-   .cart {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: row;
-      gap:16px;
-      text-decoration: none;
-
-      h3 {
-         color: var(--clr-db);
-         font-family: 'Open Sans';
-         font-size: 16px;
-         font-style: normal;
-         font-weight: 700;
-         line-height: 100%; /* 16px */
-         text-transform: uppercase;
-         inline-size: 60%;
-      }
-   }
-
-}
-
-
 
 .container {
    display: flex;
@@ -73,8 +12,8 @@ header {
          margin:0;
          margin-bottom: 64px;
          color: var(--clr-db);
-         font-family: 'Eczar';
-         font-size: 48px;
+         font-family: var(--fnt-family-eczar);
+         font-size: var(--fnt-size-h1);
          font-style: normal;
          font-weight: 700;
          line-height: 57.6px; /* 57.6px */
@@ -121,7 +60,7 @@ header {
                      p {
                         margin: 0;
                         color: var(--clr-db);
-                        font-family: 'Eczar';
+                        font-family: var(--fnt-family-eczar);
                         font-size: 32px;
                         font-style: normal;
                         font-weight: 700;
@@ -132,7 +71,7 @@ header {
                         border-radius: 16px;
                         background: var(--orange, #F73);
                         color: var(--clr-white);
-                        font-family: 'Eczar';
+                        font-family: var(--fnt-family-eczar);
                         font-size: 16px;
                         font-style: normal;
                         font-weight: 700;
@@ -189,7 +128,7 @@ header {
 
                            margin: 0;
                            color: var(--clr-db);
-                           font-family: 'Open Sans';
+                           font-family: var(--fnt-family-opensans);
                            font-size: 14px;
                            font-style: normal;
                            font-weight: 700;
@@ -265,7 +204,7 @@ header {
                               padding: 5px 0px 0px 35px;
                               margin: 0;
                               color: var(--clr-db);
-                              font-family: 'Open Sans';
+                              font-family: var(--fnt-family-opensans);
                               font-size: 14px;
                               font-style: normal;
                               font-weight: 700;
@@ -306,7 +245,7 @@ header {
                      
                      label {
                         color: var(--clr-db);
-                        font-family: 'Open Sans';
+                        font-family: var(--fnt-family-opensans);
                         font-size: 14px;
                         font-style: normal;
                         font-weight: 700;
@@ -325,7 +264,7 @@ header {
                      border-radius: 64px;
                      border: 2px solid var(--yellow, #FFBD5C);
                      color: var(--clr-db);
-                     font-family: 'Open Sans';
+                     font-family: var(--fnt-family-opensans);
                      font-size: 14px;
                      font-style: normal;
                      font-weight: 700;
@@ -339,5 +278,3 @@ header {
       }
    }
 }
-
-

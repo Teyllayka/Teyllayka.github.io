@@ -1,0 +1,30 @@
+header {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   flex-direction: row;
+   background-color: white;
+   height: 96px;
+   padding: 0px 32px;
+
+   .cart {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      gap:16px;
+      text-decoration: none;
+
+      h3 {
+         color: var(--clr-db);
+         font-family: var(--fnt-family-opensans);
+         font-size: 16px;
+         font-style: normal;
+         font-weight: 700;
+         line-height: 100%; /* 16px */
+         text-transform: uppercase;
+         inline-size: 60%;
+      }
+   }
+
+}
