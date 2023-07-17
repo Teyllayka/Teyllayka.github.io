@@ -1,0 +1,275 @@
+:root {
+  --clr-lc: #FEF2E8;
+  --clr-db: #023A6B;
+  --clr-orang: #FF7733;
+  --clr-white: #FFF;
+  --fnt-size-h1: 48px;
+  --fnt-size-h2: 36px;
+  --fnt-size-h3: 24px;
+  --fnt-size-p: 18px;
+  --animation-dur: 0.5s ease;
+  --fnt-family-poppins: "Poppins", sans-serif;
+  --fnt-family-monsterrat: "Montserrat", sans-serif;
+}
+
+body {
+  margin: auto;
+  background-color: var(--clr-lc);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  background-color: white;
+  height: 96px;
+  padding: 0px 32px;
+}
+header .cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 16px;
+  text-decoration: none;
+}
+header .cart h3 {
+  color: var(--clr-db);
+  font-family: "Open Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%; /* 16px */
+  text-transform: uppercase;
+  inline-size: 60%;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 64px 0px 76px 0px;
+}
+.container .shop {
+  width: 73%;
+}
+.container .shop h1 {
+  margin: 0;
+  margin-bottom: 64px;
+  color: var(--clr-db);
+  font-family: "Eczar";
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 57.6px; /* 57.6px */
+  inline-size: 55%;
+}
+.container .shop .products {
+  list-style: none;
+  -moz-columns: 3;
+       columns: 3;
+  -moz-column-gap: 48px;
+       column-gap: 48px;
+  padding: 0;
+  margin: 0;
+}
+.container .shop .products li form .image {
+  position: relative;
+  display: inline-block; /* <= shrinks container to image size */
+  transition: transform 150ms ease-in-out;
+}
+.container .shop .products li form .image svg {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-right: 30px;
+}
+.container .shop .products li form .description {
+  margin-bottom: 16px;
+}
+.container .shop .products li form .description .upper {
+  margin: 24px 0px 16px 0px;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+.container .shop .products li form .description .upper p {
+  margin: 0;
+  color: var(--clr-db);
+  font-family: "Eczar";
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%; /* 38.4px */
+}
+.container .shop .products li form .description .upper .price {
+  border-radius: 16px;
+  background: var(--orange, #F73);
+  color: var(--clr-white);
+  font-family: "Eczar";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%; /* 19.2px */
+  text-align: center;
+  max-width: 42px;
+  max-height: 20px;
+  padding: 3px 2px 0px 2px;
+}
+.container .shop .products li form .description .options {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.container .shop .products li form .description .options .sugar {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.container .shop .products li form .description .options .sugar input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.container .shop .products li form .description .options .sugar .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 24px;
+  width: 24px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+.container .shop .products li form .description .options .sugar p {
+  padding: 5px 0px 0px 35px;
+  margin: 0;
+  color: var(--clr-db);
+  font-family: "Open Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%; /* 16.8px */
+  text-transform: uppercase;
+}
+.container .shop .products li form .description .options .sugar:hover input ~ .checkmark {
+  background-color: #F73;
+}
+.container .shop .products li form .description .options .sugar input:checked ~ .checkmark {
+  background-color: #F73;
+}
+.container .shop .products li form .description .options .sugar:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.container .shop .products li form .description .options .sugar input:checked ~ .checkmark:after {
+  display: block;
+}
+.container .shop .products li form .description .options .sugar .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+.container .shop .products li form .description .options .ratios {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 24px;
+}
+.container .shop .products li form .description .options .ratios .ratio {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+.container .shop .products li form .description .options .ratios .ratio input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+.container .shop .products li form .description .options .ratios .ratio .radio {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #fff;
+  border-radius: 50%;
+}
+.container .shop .products li form .description .options .ratios .ratio p {
+  padding: 5px 0px 0px 35px;
+  margin: 0;
+  color: var(--clr-db);
+  font-family: "Open Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%; /* 16.8px */
+  text-transform: uppercase;
+}
+.container .shop .products li form .description .options .ratios .ratio:hover input ~ .radio {
+  background-color: #F73;
+}
+.container .shop .products li form .description .options .ratios .ratio input:checked ~ .radio {
+  background-color: #fff;
+}
+.container .shop .products li form .description .options .ratios .radio:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.container .shop .products li form .description .options .ratios .ratio input:checked ~ .radio:after {
+  display: block;
+}
+.container .shop .products li form .description .options .ratios .ratio .radio:after {
+  top: 5px;
+  left: 5px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #F73;
+}
+.container .shop .products li form .description .options label {
+  color: var(--clr-db);
+  font-family: "Open Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%; /* 16.8px */
+  text-transform: uppercase;
+}
+.container .shop .products li form .atc {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 16px;
+}
+.container .shop .products li form .atc button {
+  background-color: transparent;
+  border-radius: 64px;
+  border: 2px solid var(--yellow, #FFBD5C);
+  color: var(--clr-db);
+  font-family: "Open Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 16px; /* 114.286% */
+  text-transform: uppercase;
+  padding: 16px 24px;
+}/*# sourceMappingURL=style.css.map */
