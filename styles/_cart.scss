@@ -1,0 +1,23 @@
+.container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin: 64px 0px 76px 0px;
+
+   .cart {
+      width: 73%;
+
+      h1 {
+         margin:0;
+         margin-bottom: 64px;
+         color: var(--clr-db);
+         font-family: var(--fnt-family-eczar);
+         font-size: var(--fnt-size-h1);
+         font-style: normal;
+         font-weight: 700;
+         line-height: 57.6px; /* 57.6px */
+         inline-size: 70%;
+      }
+
+   }
+}
