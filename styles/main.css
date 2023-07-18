@@ -6,6 +6,11 @@
   align-items: center;
   margin: 64px 0px 76px 0px;
 }
+@media screen and (max-width: 900px) {
+  .container {
+    margin: 32px 0px 76px 0px !important;
+  }
+}
 .container .shop {
   width: 68%;
 }
@@ -341,6 +346,11 @@ header .cart h3 {
   line-height: 57.6px; /* 57.6px */
   inline-size: 70%;
 }
+@media screen and (max-width: 1200px) {
+  .container .cart h1 {
+    font-size: 32px;
+  }
+}
 .container .cart .items {
   display: flex;
   justify-content: space-between;
@@ -369,9 +379,9 @@ header .cart h3 {
   align-items: center;
   flex-direction: row;
 }
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 800px) {
   .container .cart .items ul li {
-    flex-direction: column;
+    display: grid;
   }
 }
 .container .cart .items ul li .right {
@@ -379,6 +389,12 @@ header .cart h3 {
   justify-content: center;
   align-items: center;
   flex-direction: row;
+}
+@media screen and (max-width: 800px) {
+  .container .cart .items ul li .right {
+    grid-column: span 2;
+    justify-self: center;
+  }
 }
 .container .cart .items ul li .right .description {
   margin: 0px 32px 0px 38px;
@@ -389,7 +405,7 @@ header .cart h3 {
 }
 @media screen and (max-width: 400px) {
   .container .cart .items ul li .right .description {
-    margin: 0;
+    margin: 0px 0px 0px 20px;
   }
 }
 .container .cart .items ul li .right .description .price {
@@ -444,6 +460,18 @@ header .cart h3 {
   align-items: center;
   flex-direction: row;
   gap: 10px;
+}
+@media screen and (max-width: 800px) {
+  .container .cart .items ul li .quantity-container {
+    grid-column: span 2;
+    justify-self: center;
+    margin-left: 100px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .container .cart .items ul li .quantity-container {
+    margin-left: 120px;
+  }
 }
 .container .cart .items ul li .quantity-container .quantity {
   border-radius: 24px;
