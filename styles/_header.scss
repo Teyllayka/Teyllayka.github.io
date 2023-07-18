@@ -7,6 +7,19 @@ header {
    height: 96px;
    padding: 0px 32px;
 
+   .icon {
+      @media screen and (max-width: 700px) {
+         display: none;
+      }
+   }
+
+   .icon-small {
+      display: none;
+      @media screen and (max-width: 700px) {
+         display: unset;
+      }
+   }
+
    .cart {
       display: flex;
       justify-content: center;
@@ -24,6 +37,10 @@ header {
          line-height: 100%; /* 16px */
          text-transform: uppercase;
          inline-size: 60%;
+
+         @media screen and (max-width: 700px) {
+            display: none;
+         }
       }
    }
 
