@@ -60,16 +60,9 @@
 }
 @media screen and (max-width: 1200px) {
   .container .shop .products {
-    display: grid;
-    row-gap: 100px;
-    -moz-columns: unset;
-         columns: unset;
-    -moz-column-gap: unset;
-         column-gap: unset;
-  }
-}
-@media screen and (max-width: 700px) {
-  .container .shop .products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     row-gap: 40px;
   }
 }
