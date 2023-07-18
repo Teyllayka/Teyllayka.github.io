@@ -83,6 +83,18 @@
   bottom: 0;
   right: 0;
   margin-right: 30px;
+  animation-name: rotate;
+  animation-duration: 5500ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 .container .shop .products li form .description {
   margin-bottom: 16px;
@@ -158,8 +170,8 @@
 .container .shop .products li form .description .options .sugar .checkmark::after {
   left: 9px;
   top: 5px;
-  width: 5px;
-  height: 10px;
+  width: 1px;
+  height: 1px;
   border: solid white;
   border-width: 0 3px 3px 0;
   transform: rotate(45deg);
@@ -188,6 +200,7 @@
   justify-content: flex-start;
   align-items: center;
   gap: 24px;
+  /* Hide the default radio button */
 }
 .container .shop .products li form .description .options .ratios .ratio {
   display: block;
@@ -269,6 +282,10 @@
   line-height: 16px; /* 114.286% */
   text-transform: uppercase;
   padding: 16px 24px;
+}
+.container .shop .products li form .atc button:hover {
+  background-color: #FFBD5C;
+  transition: background-color 0.5s ease-in-out;
 }
 
 header {
@@ -503,9 +520,6 @@ header .cart h3 {
 }
 .container .cart .items ul li .quantity-container .quantity input:focus {
   border: none;
-}
-.container .cart .items ul li .quantity-container .quantity input[type=number] {
-  -moz-appearance: textfield;
 }
 .container .cart .items ul li .quantity-container .quantity button {
   background: transparent;

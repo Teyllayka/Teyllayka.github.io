@@ -80,6 +80,18 @@
                      bottom:  0;
                      right: 0;
                      margin-right: 30px;
+                     @keyframes rotate {
+                        from {
+                          transform: rotate(0deg);
+                        }
+                        to {
+                          transform: rotate(360deg);
+                        }
+                     }
+                     animation-name: rotate;
+                     animation-duration: 5500ms;
+                     animation-iteration-count: infinite;
+                     animation-timing-function: linear;
                   }
                }
 
@@ -164,8 +176,8 @@
                            &::after {
                               left: 9px;
                               top: 5px;
-                              width: 5px;
-                              height: 10px;
+                              width: 1px;
+                              height: 1px;
                               border: solid white;
                               border-width: 0 3px 3px 0;
                               -webkit-transform: rotate(45deg);
@@ -173,11 +185,9 @@
                               transform: rotate(45deg);
                            }
                         }
-                        
 
                         p {
                            padding: 5px 0px 0px 35px;
-
                            margin: 0;
                            color: var(--clr-db);
                            font-family: var(--fnt-family-opensans);
@@ -186,7 +196,6 @@
                            font-weight: 700;
                            line-height: 120%; /* 16.8px */
                            text-transform: uppercase;
-
                         }
 
                         &::after {
@@ -198,11 +207,8 @@
                         &:hover {
                            input ~ .checkmark {
                               background-color: #F73;
-
                            }
                         }
-
-                        
                      }
                 
                      .ratios {
@@ -275,6 +281,54 @@
                               }
                            }
                         }
+
+                        /* Hide the default radio button */
+
+                        // .ratio {
+                        //    display: inline-block;
+                        //    position: relative;
+                        //    cursor: pointer;
+
+                        //    p {
+                        //       margin: 0;
+                        //       padding-left: 35px;
+                        //    }
+
+                        //    input {
+                        //       display: none;
+
+                        //    }
+
+                        //    .radio {
+                        //       position: absolute;
+                        //       top: 50%;
+                        //       left: 0;
+                        //       transform: translateY(-50%);
+                        //       width: 22px;
+                        //       height: 22px;
+                        //       border: 2px solid white;
+                        //       border-radius: 50%;
+                        //       transition: border-color 0.3s ease;
+                        //       background-color: white;
+                        //    }
+
+
+                        //    input:checked + .radio {
+                        //       border-color: #FF7733;
+                        //       background-color: #FF7733;
+                        //       border-radius: 50%;
+
+                        //       &::after {
+                        //          width: 15px;
+                        //          height: 15px;
+                        //       }
+                        //    }
+                  
+
+                        // }
+                        
+                        
+                   
                      }
                      
                      label {
@@ -306,13 +360,15 @@
                      line-height: 16px; /* 114.286% */
                      text-transform: uppercase;
                      padding: 16px 24px;
+
+                     &:hover {
+                        background-color: #FFBD5C;
+                        transition: background-color 0.5s ease-in-out;
+                     }
                   }
                }
             }
          }
-         
-
-
       }
    }
 }
