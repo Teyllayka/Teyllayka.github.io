@@ -150,9 +150,9 @@
   width: 0;
 }
 .container .shop .products li form .description .options .sugar input:checked ~ .checkmark {
-  background-color: #F73;
+  background-color: #FFBD5C;
 }
-.container .shop .products li form .description .options .sugar input:checked ~ .checkmark:after {
+.container .shop .products li form .description .options .sugar input:checked ~ .checkmark::before {
   display: block;
 }
 .container .shop .products li form .description .options .sugar .checkmark {
@@ -162,16 +162,19 @@
   height: 24px;
   width: 24px;
   background-color: #fff;
-  border-radius: 10px;
+  border-radius: 10px; /* Modified border-radius */
 }
-.container .shop .products li form .description .options .sugar .checkmark::after {
-  left: 9px;
-  top: 5px;
-  width: 1px;
-  height: 1px;
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  transform: rotate(45deg);
+.container .shop .products li form .description .options .sugar .checkmark::before {
+  content: "";
+  position: absolute;
+  display: none;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
 }
 .container .shop .products li form .description .options .sugar p {
   padding: 5px 0px 0px 35px;
@@ -224,12 +227,13 @@
   content: "";
   position: absolute;
   display: none;
-  top: 5px;
-  left: 5px;
-  width: 15px;
-  height: 15px;
+  top: 50%;
+  left: 50%;
+  width: 17px;
+  height: 17px;
   border-radius: 50%;
   background: #F73;
+  transform: translate(-50%, -50%);
 }
 .container .shop .products li form .description .options .ratios .ratio p {
   padding: 5px 0px 0px 35px;

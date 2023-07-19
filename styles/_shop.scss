@@ -65,15 +65,11 @@
          }
 
          li {
-            
-            
-
             @media screen and (max-width: 670px) {
                border-bottom: 2px solid var(--clr-white);
                padding-bottom: 40px;
                margin-top: 40px;
             }
-
 
             form {
                .image {
@@ -149,36 +145,36 @@
                            cursor: pointer;
                            height: 0;
                            width: 0;
-
+                       
                            &:checked ~ .checkmark {
-                              background-color: #F73;
+                             background-color: #FFBD5C;
+                       
+                             &::before {
+                               display: block;
+                             }
                            }
-
-
-                           &:checked ~ .checkmark:after {
-                              display: block;
-                           }
-                        }
-
-                        .checkmark {
+                         }
+                       
+                         .checkmark {
                            position: absolute;
                            top: 0;
                            left: 0;
                            height: 24px;
                            width: 24px;
                            background-color: #fff;
-                           border-radius: 10px;
-
-                           &::after {
-                              left: 9px;
-                              top: 5px;
-                              width: 1px;
-                              height: 1px;
-                              border: solid white;
-                              border-width: 0 3px 3px 0;
-                              -webkit-transform: rotate(45deg);
-                              -ms-transform: rotate(45deg);
-                              transform: rotate(45deg);
+                           border-radius: 10px; /* Modified border-radius */
+                       
+                           &::before {
+                             content: "";
+                             position: absolute;
+                             display: none;
+                             top: 50%;
+                             left: 50%;
+                             width: 10px;
+                             height: 10px;
+                             background-color: #fff;
+                             border-radius: 50%;
+                             transform: translate(-50%, -50%);
                            }
                         }
 
@@ -239,12 +235,13 @@
                                  content: "";
                                  position: absolute;
                                  display: none;
-                                 top: 5px;
-                                 left: 5px;
-                                 width: 15px;
-                                 height: 15px;
+                                 top: 50%;
+                                 left: 50%;
+                                 width: 17px;
+                                 height: 17px;
                                  border-radius: 50%;
                                  background: #F73;
+                                 transform: translate(-50%, -50%);
                               }
                            }
 
