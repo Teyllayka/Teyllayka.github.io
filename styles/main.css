@@ -229,11 +229,11 @@
   display: none;
   top: 50%;
   left: 50%;
-  width: 17px;
-  height: 17px;
+  width: 15px;
+  height: 15px;
   border-radius: 50%;
-  background: #F73;
   transform: translate(-50%, -50%);
+  background: #F73;
 }
 .container .shop .products li form .description .options .ratios .ratio p {
   padding: 5px 0px 0px 35px;
