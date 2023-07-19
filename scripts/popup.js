@@ -1,11 +1,10 @@
 function dosmth() {
    let a = document.getElementById("popup");
-   console.log(a.style.display);
-
-   if (a.style.display == "block") {
-      a.style.display = "none";
+    
+   if (a.style.right == "0px") {
+     a.style.right = "-100%";   // Close the popup
    } else {
-      a.style.display = "block";
+     a.style.right = "0px";    // Open the popup
    }
-   
-}
+ }
+ 
