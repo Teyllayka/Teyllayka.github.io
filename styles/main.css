@@ -81,14 +81,6 @@
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 .container .shop .products li form .description {
   margin-bottom: 16px;
 }
@@ -279,6 +271,12 @@
 }
 .container .shop .products li form .atc button:hover {
   background-color: #FFBD5C;
+}
+.container .shop .products li form .atc svg {
+  transition: transform 0.3s ease-in-out;
+}
+.container .shop .products li form .atc svg:hover {
+  transform: scale(1.2);
 }
 
 header {
@@ -817,4 +815,13 @@ header .cart h3 {
 body {
   margin: auto;
   background-color: var(--clr-lc);
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }/*# sourceMappingURL=main.css.map */
