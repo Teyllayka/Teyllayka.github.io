@@ -177,15 +177,11 @@
   position: absolute;
   display: none;
 }
-.container .shop .products li form .description .options .sugar:hover input ~ .checkmark {
-  background-color: #F73;
-}
 .container .shop .products li form .description .options .ratios {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   gap: 24px;
-  /* Hide the default radio button */
 }
 .container .shop .products li form .description .options .ratios .ratio {
   display: block;
@@ -199,9 +195,6 @@
   position: absolute;
   opacity: 0;
   cursor: pointer;
-}
-.container .shop .products li form .description .options .ratios .ratio input:checked ~ .radio {
-  background-color: #fff;
 }
 .container .shop .products li form .description .options .ratios .ratio input:checked ~ .radio:after {
   display: block;
@@ -236,9 +229,6 @@
   font-weight: 700;
   line-height: 120%; /* 16.8px */
   text-transform: uppercase;
-}
-.container .shop .products li form .description .options .ratios .ratio:hover input ~ .radio {
-  background-color: #F73;
 }
 .container .shop .products li form .description .options label {
   color: var(--clr-db);

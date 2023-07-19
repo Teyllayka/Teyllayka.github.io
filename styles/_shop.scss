@@ -117,7 +117,6 @@
                      display: flex;
                      flex-direction: column;
                      gap:16px;
-                    
 
                      .sugar {
                         display: block;
@@ -186,12 +185,6 @@
                            position: absolute;
                            display: none;
                         }
-
-                        &:hover {
-                           input ~ .checkmark {
-                              background-color: #F73;
-                           }
-                        }
                      }
                 
                      .ratios {
@@ -213,10 +206,6 @@
                               position: absolute;
                               opacity: 0;
                               cursor: pointer;
-
-                              &:checked ~ .radio {
-                                 background-color: #fff;
-                              }
 
                               &:checked ~ .radio:after {
                                  display: block;
@@ -255,63 +244,9 @@
                               font-weight: 700;
                               line-height: 120%; /* 16.8px */
                               text-transform: uppercase;
-   
-                           }
-
-                           &:hover {
-                              input ~ .radio {
-                                 background-color: #F73;
-                              }
                            }
                         }
 
-                        /* Hide the default radio button */
-
-                        // .ratio {
-                        //    display: inline-block;
-                        //    position: relative;
-                        //    cursor: pointer;
-
-                        //    p {
-                        //       margin: 0;
-                        //       padding-left: 35px;
-                        //    }
-
-                        //    input {
-                        //       display: none;
-
-                        //    }
-
-                        //    .radio {
-                        //       position: absolute;
-                        //       top: 50%;
-                        //       left: 0;
-                        //       transform: translateY(-50%);
-                        //       width: 22px;
-                        //       height: 22px;
-                        //       border: 2px solid white;
-                        //       border-radius: 50%;
-                        //       transition: border-color 0.3s ease;
-                        //       background-color: white;
-                        //    }
-
-
-                        //    input:checked + .radio {
-                        //       border-color: #FF7733;
-                        //       background-color: #FF7733;
-                        //       border-radius: 50%;
-
-                        //       &::after {
-                        //          width: 15px;
-                        //          height: 15px;
-                        //       }
-                        //    }
-                  
-
-                        // }
-                        
-                        
-                   
                      }
                      
                      label {
