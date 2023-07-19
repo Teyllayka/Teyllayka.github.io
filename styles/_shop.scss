@@ -60,13 +60,27 @@
             row-gap: 40px;
          }
 
+         @media screen and (max-width: 670px) {
+            row-gap: 0px;
+         }
+
          li {
+            
+            
+
+            @media screen and (max-width: 670px) {
+               border-bottom: 2px solid var(--clr-white);
+               padding-bottom: 40px;
+               margin-top: 40px;
+            }
+
+
             form {
                .image {
                   position: relative;
                   display: inline-block; /* <= shrinks container to image size */
                   transition: transform 150ms ease-in-out;
-                  svg {
+                  .svg-arabic {
                      position: absolute;
                      bottom:  0;
                      right: 0;
@@ -286,7 +300,7 @@
                      }
                   }
 
-                  svg {
+                  img {
                      transition: transform 0.3s ease-in-out;
                      &:hover {
                         transform: scale(1.2);

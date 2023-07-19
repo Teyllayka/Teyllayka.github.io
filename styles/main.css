@@ -66,12 +66,24 @@
     row-gap: 40px;
   }
 }
+@media screen and (max-width: 670px) {
+  .container .shop .products {
+    row-gap: 0px;
+  }
+}
+@media screen and (max-width: 670px) {
+  .container .shop .products li {
+    border-bottom: 2px solid var(--clr-white);
+    padding-bottom: 40px;
+    margin-top: 40px;
+  }
+}
 .container .shop .products li form .image {
   position: relative;
   display: inline-block; /* <= shrinks container to image size */
   transition: transform 150ms ease-in-out;
 }
-.container .shop .products li form .image svg {
+.container .shop .products li form .image .svg-arabic {
   position: absolute;
   bottom: 0;
   right: 0;
@@ -262,10 +274,10 @@
 .container .shop .products li form .atc button:hover {
   background-color: #FFBD5C;
 }
-.container .shop .products li form .atc svg {
+.container .shop .products li form .atc img {
   transition: transform 0.3s ease-in-out;
 }
-.container .shop .products li form .atc svg:hover {
+.container .shop .products li form .atc img:hover {
   transform: scale(1.2);
 }
 
@@ -376,6 +388,9 @@ header .cart h3 {
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
+  border-bottom: 2px solid var(--clr-white);
+  padding-bottom: 24px;
+  margin-top: 24px;
 }
 @media screen and (max-width: 800px) {
   .container .cart .items ul li {
@@ -519,7 +534,7 @@ header .cart h3 {
 .container .cart .items ul li .quantity-container .quantity .substract {
   margin-right: 10px;
 }
-.container .cart .items ul li .quantity-container .quantity svg {
+.container .cart .items ul li .quantity-container .quantity img {
   padding-bottom: 0;
   margin: 0px 5px;
 }
