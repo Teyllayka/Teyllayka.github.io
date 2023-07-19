@@ -353,10 +353,11 @@
                      line-height: 16px; /* 114.286% */
                      text-transform: uppercase;
                      padding: 16px 24px;
+                     transition: background-color 0.5s ease-in-out;
+
 
                      &:hover {
                         background-color: #FFBD5C;
-                        transition: background-color 0.5s ease-in-out;
                      }
                   }
                }

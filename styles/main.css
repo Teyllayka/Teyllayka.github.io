@@ -275,10 +275,10 @@
   line-height: 16px; /* 114.286% */
   text-transform: uppercase;
   padding: 16px 24px;
+  transition: background-color 0.5s ease-in-out;
 }
 .container .shop .products li form .atc button:hover {
   background-color: #FFBD5C;
-  transition: background-color 0.5s ease-in-out;
 }
 
 header {
@@ -409,9 +409,10 @@ header .cart h3 {
 .container .cart .items ul li .right .description {
   margin: 0px 32px 0px 38px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
+  gap: 8px;
 }
 @media screen and (max-width: 400px) {
   .container .cart .items ul li .right .description {
@@ -434,7 +435,7 @@ header .cart h3 {
   font-weight: 700;
   line-height: 120%; /* 48px */
 }
-.container .cart .items ul li .right .description .price p {
+.container .cart .items ul li .right .description .price div {
   margin: 0;
   font-size: 16px;
   font-style: normal;
@@ -452,10 +453,11 @@ header .cart h3 {
 }
 .container .cart .items ul li .right .description .info {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: row;
   gap: 24px;
+  width: 100%;
 }
 .container .cart .items ul li .right .description .info .additional {
   display: flex;
@@ -463,6 +465,14 @@ header .cart h3 {
   align-items: center;
   flex-direction: row;
   gap: 8px;
+}
+.container .cart .items ul li .right .description .info .additional div {
+  color: var(--clr-db);
+  font-family: var(--fnt-family-opensans);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%; /* 16.8px */
 }
 .container .cart .items ul li .quantity-container {
   display: flex;
@@ -590,7 +600,7 @@ header .cart h3 {
   font-weight: 700;
   line-height: 120%; /* 16.8px */
 }
-.container .cart .items .checkout-container .checkout ul li p {
+.container .cart .items .checkout-container .checkout ul li div {
   margin: 0;
   color: var(--clr-orange2);
   font-family: var(--fnt-family-opensans);
@@ -615,7 +625,7 @@ header .cart h3 {
   font-weight: 700;
   line-height: 120%; /* 16.8px */
 }
-.container .cart .items .checkout-container .checkout .delivery p {
+.container .cart .items .checkout-container .checkout .delivery div {
   margin: 0;
   color: var(--clr-orange2);
   font-family: var(--fnt-family-opensans);
