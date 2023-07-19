@@ -677,8 +677,28 @@ header .cart h3 {
   top: 0;
   bottom: 0;
 }
+@media screen and (max-width: 450px) {
+  .popup {
+    width: 350px;
+  }
+}
+@media screen and (max-width: 360px) {
+  .popup {
+    width: 300px;
+  }
+}
 .popup .ppinfo {
   margin: 48px 40px 40px 40px;
+}
+@media screen and (max-width: 450px) {
+  .popup .ppinfo {
+    margin: 24px 20px 20px 20px;
+  }
+}
+@media screen and (max-width: 360px) {
+  .popup .ppinfo {
+    width: 90%;
+  }
 }
 .popup .ppinfo .price {
   margin-bottom: 32px;
