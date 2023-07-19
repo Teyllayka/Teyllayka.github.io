@@ -275,7 +275,7 @@
   line-height: 16px; /* 114.286% */
   text-transform: uppercase;
   padding: 16px 24px;
-  transition: background-color 0.5s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
 }
 .container .shop .products li form .atc button:hover {
   background-color: #FFBD5C;
@@ -536,7 +536,7 @@ header .cart h3 {
   margin: 0px 5px;
 }
 .container .cart .items ul li .quantity-container svg {
-  padding-bottom: 7px;
+  padding-bottom: 3px;
 }
 .container .cart .items .line {
   width: 100%;
@@ -655,6 +655,10 @@ header .cart h3 {
   padding: 16px 24px;
   width: 100%;
   height: 100%;
+  transition: background-color 0.3s ease-in-out;
+}
+.container .cart .items .checkout-container .checkout button:hover {
+  background-color: var(--clr-orange2);
 }
 
 .popup {
