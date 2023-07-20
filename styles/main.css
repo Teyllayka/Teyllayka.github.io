@@ -303,6 +303,24 @@ header .cart {
   gap: 16px;
   text-decoration: none;
 }
+header .cart .hidden {
+  display: none;
+}
+header .cart .shown {
+  position: relative;
+}
+header .cart .shown p {
+  position: absolute;
+  top: 40%;
+  left: 35%;
+  margin: 0;
+  color: var(--clr-white);
+  font-family: var(--fnt-family-recoleta);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 100%; /* 20px */
+}
 header .cart h3 {
   color: var(--clr-db);
   font-family: var(--fnt-family-opensans);
@@ -401,6 +419,14 @@ header .cart h3 {
     justify-self: center;
   }
 }
+.container .cart .cart-items .quantity {
+  border-radius: 24px;
+  border: 2px solid var(--yellow, #FFBD5C);
+  background: var(--light-cream, #FEF2E8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .container .cart .cart-items .quantity-container {
   display: flex;
   justify-content: center;
@@ -422,14 +448,6 @@ header .cart h3 {
 }
 .container .cart .cart-items .quantity-container svg {
   padding-bottom: 3px;
-}
-.container .cart .cart-items .quantity {
-  border-radius: 24px;
-  border: 2px solid var(--yellow, #FFBD5C);
-  background: var(--light-cream, #FEF2E8);
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 .container .cart .cart-items .quantity input {
   background-color: transparent;
@@ -533,6 +551,9 @@ header .cart h3 {
   font-weight: 700;
   line-height: 120%; /* 16.8px */
 }
+.container .cart .checkout {
+  padding: 32px 24px 24px 24px;
+}
 .container .cart .checkout-container {
   border-radius: 16px;
   background: var(--clr-white);
@@ -542,9 +563,6 @@ header .cart h3 {
   .container .cart .checkout-container {
     width: 100%;
   }
-}
-.container .cart .checkout {
-  padding: 32px 24px 24px 24px;
 }
 .container .cart .checkout h4 {
   margin: 0;
@@ -777,6 +795,12 @@ header .cart h3 {
   background-color: var(--clr-orange2);
 }
 
+@font-face {
+  font-family: "Recoleta";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Recoleta Regular DEMO"), url("../fonts/Recoleta-RegularDEMO.woff") format("woff");
+}
 :root {
   --clr-lc: #FEF2E8;
   --clr-db: #023A6B;
@@ -790,6 +814,7 @@ header .cart h3 {
   --animation-dur: 0.5s ease;
   --fnt-family-opensans: "Open Sans", sans-serif;
   --fnt-family-eczar: "Eczar", sans-serif;
+  --fnt-family-recoleta: "Recoleta", sans-serif;
 }
 
 body {

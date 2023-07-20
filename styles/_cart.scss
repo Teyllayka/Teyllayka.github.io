@@ -79,29 +79,6 @@
             }
          }
 
-         .quantity-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: row;
-            gap:10px;
-
-
-            @media screen and (max-width: 800px) {
-               grid-column: span 2;
-               justify-self: center;
-               margin-left:100px;
-            }
-
-            @media screen and (max-width: 400px) {
-               margin-left:120px;
-            }
-
-            svg {
-               padding-bottom: 3px;
-            }
-         }
-
          .quantity {
             border-radius: 24px;
             border: 2px solid var(--yellow, #FFBD5C);
@@ -109,6 +86,29 @@
             display: flex;
             justify-content: center;
             align-items: center;
+
+            &-container {
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               flex-direction: row;
+               gap:10px;
+      
+      
+               @media screen and (max-width: 800px) {
+                  grid-column: span 2;
+                  justify-self: center;
+                  margin-left:100px;
+               }
+   
+               @media screen and (max-width: 400px) {
+                  margin-left:120px;
+               }
+   
+               svg {
+                  padding-bottom: 3px;
+               }
+            }
             
 
             input {
@@ -228,18 +228,19 @@
          }
       }
 
-      .checkout-container {
-         border-radius: 16px;
-         background: var(--clr-white);
-         width: 30%;
-
-         @media screen and (max-width: 1400px) {
-            width: 100%;
-         }
-      }
 
       .checkout {
          padding: 32px 24px 24px 24px;
+
+         &-container {
+            border-radius: 16px;
+            background: var(--clr-white);
+            width: 30%;
+   
+            @media screen and (max-width: 1400px) {
+               width: 100%;
+            }
+         }
 
          h4 {
             margin: 0;

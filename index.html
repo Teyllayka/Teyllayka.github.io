@@ -9,24 +9,28 @@
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link rel="stylesheet" type="text/css" href="styles/main.css" />
    <title>Homework</title>
-   <script src="scripts/popup.js"></script>
+   <script src="scripts/shop.js"></script>
     
 </head>
 <body>
    <header>
       <a class="icon" href="index.html">
         <img src="img/logo.svg" alt="">
-            
       </a>
       <a class="icon-small" href="index.html">
          <img src="img/logo_small.svg" alt="">
       </a>
       <a class="cart" href="cart.html">
-         <img src="img/cart.svg" alt="">
+         <img src="img/cart.svg" alt="" id="shown" class="shown">
+         <div class="hidden" id="hidden">
+            <p id="counter"></p>
+            <img src="img/cart-full.svg" alt="" >
+         </div>
          <h3>
             Shopping Cart
          </h3>
       </a>
+      
    </header>
    <div class="popup" id="popup">
       <section class="ppinfo">

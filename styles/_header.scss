@@ -27,6 +27,29 @@ header {
       gap:16px;
       text-decoration: none;
 
+      .hidden {
+         display: none;
+         
+
+      }
+
+      .shown {
+         position: relative;
+
+         p {
+            position: absolute;
+            top:40%;
+            left:35%;
+            margin:0;
+            color: var(--clr-white);
+            font-family: var(--fnt-family-recoleta);
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 900;
+            line-height: 100%; /* 20px */
+         }
+      }
+
       h3 {
          color: var(--clr-db);
          font-family: var(--fnt-family-opensans);

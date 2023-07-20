@@ -2,6 +2,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Eczar:wght@400;500;600;700;800&display=swap");
 @import 'shop', 'header', 'cart', 'popup';
 
+@font-face {
+   font-family: 'Recoleta';
+   font-style: normal;
+   font-weight: normal;
+   src: local('Recoleta Regular DEMO'), url('../fonts/Recoleta-RegularDEMO.woff') format('woff');
+}
+
 
 :root {
    --clr-lc: #FEF2E8;
@@ -19,6 +26,7 @@
 
    --fnt-family-opensans: "Open Sans", sans-serif;
    --fnt-family-eczar: "Eczar", sans-serif;
+   --fnt-family-recoleta: "Recoleta", sans-serif;
 }
 
 
