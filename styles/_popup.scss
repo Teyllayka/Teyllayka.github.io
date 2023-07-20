@@ -79,48 +79,40 @@
       ul {
          list-style: none;
          padding: 0;
+
+         &.compound {
+            margin-top:16px;
+            border-bottom: 2px solid #F0F0F0;
+            border-top: 2px solid #F0F0F0;
+         }
+
          li {
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-direction: row;
             margin: 16px 0px;
-
-            h4 {
-               margin: 0;
-               color: var(--clr-db);
-               font-family: var(--fnt-family-opensans);
-               font-size: 14px;
-               font-style: normal;
-               font-weight: 700;
-               line-height: 120%; /* 16.8px */
-            }
-
-            p {
-               margin: 0;
-               color: var(--clr-orange2);
-               font-family: var(--fnt-family-opensans);
-               font-size: 14px;
-               font-style: normal;
-               font-weight: 700;
-               line-height: 120%; /* 16.8px */
-            }
          }
-      }
 
+         h4 {
+            margin: 0;
+            color: var(--clr-db);
+            font-family: var(--fnt-family-opensans);
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 120%; /* 16.8px */
+         }
 
-      .line1 {
-         margin: 32px 0px 24px 0px;
-         width: 100%;
-         height: 2px;
-         background-color: #F0F0F0;
-      }
-
-      .line2 {
-         margin: 16px 0px;
-         width: 100%;
-         height: 2px;
-         background-color: #F0F0F0;
+         p {
+            margin: 0;
+            color: var(--clr-orange2);
+            font-family: var(--fnt-family-opensans);
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 120%; /* 16.8px */
+         }
       }
 
       button {
@@ -139,9 +131,7 @@
          padding: 16px 24px;
          width: 100%;
          height: 100%;
-
          transition: background-color 0.3s ease-in-out;
-
 
          &:hover {
             background-color: var(--clr-orange2);

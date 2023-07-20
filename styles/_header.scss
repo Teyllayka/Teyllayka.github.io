@@ -11,12 +11,11 @@ header {
       @media screen and (max-width: 700px) {
          display: none;
       }
-   }
-
-   .icon-small {
-      display: none;
-      @media screen and (max-width: 700px) {
-         display: unset;
+      &-small {
+         display: none;
+         @media screen and (max-width: 700px) {
+            display: unset;
+         }
       }
    }
 
