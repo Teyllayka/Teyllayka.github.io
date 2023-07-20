@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 function addToCart() {
-  if (counter < 9) {
+  if (counter < 99) {
     counter++;
 
   }

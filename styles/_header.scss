@@ -29,17 +29,17 @@ header {
 
       .hidden {
          display: none;
-         
-
       }
 
       .shown {
          position: relative;
 
          p {
+            width: 100%;
             position: absolute;
+            text-align: center;
             top:40%;
-            left:35%;
+            //left:35%;
             margin:0;
             color: var(--clr-white);
             font-family: var(--fnt-family-recoleta);

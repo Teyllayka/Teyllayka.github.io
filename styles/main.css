@@ -310,9 +310,10 @@ header .cart .shown {
   position: relative;
 }
 header .cart .shown p {
+  width: 100%;
   position: absolute;
+  text-align: center;
   top: 40%;
-  left: 35%;
   margin: 0;
   color: var(--clr-white);
   font-family: var(--fnt-family-recoleta);
