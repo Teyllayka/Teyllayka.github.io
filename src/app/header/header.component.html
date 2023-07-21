@@ -1,0 +1,21 @@
+<header>
+   <a class="icon" href="index.html">
+     <img src="assets/img/logo.svg" alt="">
+   </a>
+   <a class="icon-small" href="index.html">
+      <img src="assets/img/logo_small.svg" alt="">
+   </a>
+   <a class="cart" href="cart.html">
+      <div *ngIf="counter < 1">
+         <p></p>
+         <img src="assets/img/cart.svg" alt="" id="shown" class="shown">
+      </div>
+      <div *ngIf="counter > 0">
+         <p id="counter">{{counter}}</p>
+         <img src="assets/img/cart-full.svg" alt="" >
+      </div>
+      <h3>
+         Shopping Cart
+      </h3>
+   </a>
+</header>

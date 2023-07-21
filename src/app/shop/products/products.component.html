@@ -1,0 +1,24 @@
+<form (submit)="addToCart($event)">
+   <section class="image">
+      <img class="svg-arabic" src="img/arabic.svg" alt="">
+      <img src={{img}} alt="">
+   </section>
+   <section class="description">
+      <div class="upper">
+         <p>{{name}}</p>
+         <p class="price">${{price}}</p>
+      </div>
+      <div class="options">
+         <div class="ratios">
+            <div *ngFor="let ratio of ratios"><app-radios [num]="ratio"></app-radios></div>
+         </div>
+         <label class="sugar"><p>add sugar</p><input type="checkbox" ><span class="checkmark"></span></label>
+      </div>
+   </section>
+   <section class="atc">
+      <button>Add to cart</button>
+      <div class="info" id="smth" onclick="dosmth()">
+         <img src="assets/img/info.svg" alt="">
+      </div>
+   </section>
+</form>

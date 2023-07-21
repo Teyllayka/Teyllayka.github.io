@@ -1,0 +1,53 @@
+input[type="radio"] {
+   position: absolute;
+   opacity: 0;
+   cursor: pointer;
+
+   &:checked ~ .radio:after {
+      display: block;
+   }
+}
+
+.radio {
+   position: absolute;
+   top: 0;
+   left: 0;
+   height: 24px;
+   width: 24px;
+   background-color: #fff;
+   border-radius: 50%;
+
+   &::after {
+      content: "";
+      position: absolute;
+      display: none;
+      top: 50%;
+      left: 50%;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      background: #F73;
+   }
+}
+
+
+
+.ratio {
+   display: block;
+   position: relative;
+   cursor: pointer;
+   user-select: none;
+}
+
+p {
+   padding: 5px 0 0 35px;
+   margin: 0;
+   color: var(--clr-db);
+   font-family: var(--fnt-family-opensans);
+   font-size: 14px;
+   font-style: normal;
+   font-weight: 700;
+   line-height: 120%;
+   text-transform: uppercase;
+}
