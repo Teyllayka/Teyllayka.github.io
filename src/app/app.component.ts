@@ -10,7 +10,7 @@ export class AppComponent {
 
   public counter: number = 0;
 
-  public showMessage(event: any) {
+  public incrementCounter(event: any) {
     if (this.counter < 99) {
       this.counter++;
     }

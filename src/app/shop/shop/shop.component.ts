@@ -6,10 +6,10 @@ import { Component, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./shop.component.scss'],
 })
 export class ShopComponent {
-  @Output() public onClick = new EventEmitter<string>();
+  @Output() public onAddToCart = new EventEmitter<string>();
 
-  public send(event: any) {
-    this.onClick.emit('hey');
+  public add(event: any) {
+    this.onAddToCart.emit('hey');
   }
 
   public productList: any = [

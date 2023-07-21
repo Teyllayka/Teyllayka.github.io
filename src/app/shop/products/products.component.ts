@@ -10,10 +10,10 @@ export class ProductsComponent {
   @Input() price: number = 0.0;
   @Input() img: string = '';
   @Input() ratios: number[] = [];
-  @Output() public onClick = new EventEmitter<string>();
+  @Output() public onAddToCart = new EventEmitter<string>();
 
   public addToCart(event: Event) {
     event.preventDefault();
-    this.onClick.emit('hey');
+    this.onAddToCart.emit('hey');
   }
 }
