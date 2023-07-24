@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { CounterService } from '../counter.service';
 
 @Component({
   selector: 'app-header',
@@ -7,4 +8,12 @@ import { Component, Input } from '@angular/core';
 })
 export class HeaderComponent {
   @Input() counter: number = 0;
+
+  constructor(private counterService: CounterService) {
+    this.counterService.counterChange.subscribe(() => {
+      if (this.counter < 99) {
+        this.counter += 1;
+      }
+    });
+  }
 }

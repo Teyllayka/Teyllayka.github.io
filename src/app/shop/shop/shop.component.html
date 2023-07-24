@@ -2,7 +2,7 @@
    <section class="shop">
       <h1>We believe a cup of coffee is one of the most important, simple <span style="color: #F73">pleasures</span> in life</h1>
       <menu class="products">
-         <li *ngFor="let product of productList"><app-products [name]="product.name" [price]="product.price" [img]="product.img" [ratios]="product.options" (onAddToCart)="add($event)"></app-products></li>
+         <li *ngFor="let product of productList"><app-products [name]="product.name" [price]="product.price" [img]="product.img" [radios]="product.options" (onAddToCart)="add($event)"></app-products></li>
       </menu>
    </section>
 </main>

@@ -7,12 +7,4 @@ import { Component, Input } from '@angular/core';
 })
 export class AppComponent {
   title = 'myApp';
-
-  public counter: number = 0;
-
-  public incrementCounter(event: any) {
-    if (this.counter < 99) {
-      this.counter++;
-    }
-  }
 }

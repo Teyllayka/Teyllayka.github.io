@@ -1,4 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { CounterService } from '../../counter.service';
 
 @Component({
   selector: 'app-products',
@@ -6,14 +8,20 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./products.component.scss'],
 })
 export class ProductsComponent {
+  public data: any = {
+    sugar: false,
+    size: null,
+  };
+
   @Input() name: string = '';
   @Input() price: number = 0.0;
   @Input() img: string = '';
-  @Input() ratios: number[] = [];
-  @Output() public onAddToCart = new EventEmitter<string>();
+  @Input() radios: number[] = [];
 
-  public addToCart(event: Event) {
-    event.preventDefault();
-    this.onAddToCart.emit('hey');
+  constructor(private counterService: CounterService) {}
+
+  public onSubmit() {
+    console.log(this);
+    this.counterService.IncrementCounter(1);
   }
 }

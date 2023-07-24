@@ -7,4 +7,5 @@ import { Component, Input } from '@angular/core';
 })
 export class RadiosComponent {
   @Input() num: number = 0;
+  @Input() value: number = 0;
 }

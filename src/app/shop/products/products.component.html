@@ -1,4 +1,4 @@
-<form (submit)="addToCart($event)">
+<form #myForm="ngForm" (ngSubmit)="onSubmit()">
    <section class="image">
       <img class="svg-arabic" src="img/arabic.svg" alt="">
       <img src={{img}} alt="">
@@ -9,14 +9,14 @@
          <p class="price">${{price}}</p>
       </div>
       <div class="options">
-         <div class="ratios">
-            <div *ngFor="let ratio of ratios"><app-radios [num]="ratio"></app-radios></div>
+         <div class="radios">
+            <div *ngFor="let size of radios"><label class="ratio"><p>{{size}}ML</p><input type="radio" name="radio" [value]="size" [(ngModel)]="data.size" required><span class="radio"></span></label></div>
          </div>
-         <label class="sugar"><p>add sugar</p><input type="checkbox" ><span class="checkmark"></span></label>
+         <label class="sugar"><p>add sugar</p><input type="checkbox" [(ngModel)]="data.sugar" name="sugar"><span class="checkmark" ></span></label>
       </div>
    </section>
    <section class="atc">
-      <button>Add to cart</button>
+      <button [disabled]="!myForm.form.valid">Add to cart</button>
       <div class="info" id="smth" onclick="dosmth()">
          <img src="assets/img/info.svg" alt="">
       </div>
