@@ -8,11 +8,13 @@ import { CounterService } from './services/counter.service';
 import { HttpClient } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductsService } from './services/products.service';
+import { InfoService } from './services/info.service';
+import { PopupComponent } from './popup/popup.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent],
+  declarations: [AppComponent, HeaderComponent, PopupComponent],
   imports: [BrowserModule, RoutingModule, HttpClientModule],
   bootstrap: [AppComponent],
-  providers: [CounterService, ProductsService],
+  providers: [CounterService, ProductsService, InfoService],
 })
 export class AppModule {}

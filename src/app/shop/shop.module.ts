@@ -6,10 +6,11 @@ import { RadiosComponent } from './radios/radios.component';
 import { FormsModule } from '@angular/forms';
 import { ShopRoutingModule } from './shop-routing.module';
 import { ProductsService } from '../services/products.service';
+import { InfoService } from '../services/info.service';
 
 @NgModule({
   declarations: [ShopComponent, ProductsComponent, RadiosComponent],
   imports: [CommonModule, FormsModule, ShopRoutingModule],
-  providers: [ProductsService],
+  providers: [],
 })
 export class ShopModule {}

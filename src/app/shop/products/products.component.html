@@ -1,23 +1,23 @@
 <form #myForm="ngForm" (ngSubmit)="onSubmit()">
    <section class="image">
-      <img class="svg-arabic" src="img/arabic.svg" alt="">
-      <img src={{img}} alt="">
+      <img *ngIf="stamp" class="svg-arabic" src="assets/img/arabic.svg" alt="">
+      <img src={{imgUrl}} alt="">
    </section>
    <section class="description">
       <div class="upper">
          <p>{{name}}</p>
-         <p class="price">${{price}}</p>
+         <p class="price">${{getSelectedPrice()}}</p>
       </div>
       <div class="options">
          <div class="radios">
-            <div *ngFor="let size of radios"><label class="ratio"><p>{{size}}ML</p><input type="radio" name="radio" [value]="size" [(ngModel)]="data.size" required><span class="radio"></span></label></div>
+            <div *ngFor="let key of keys"><label class="ratio"><p>{{key}}ML</p><input type="radio" name="radio" [value]="key" [(ngModel)]="data.size" required><span class="radio"></span></label></div>
          </div>
          <label class="sugar"><p>add sugar</p><input type="checkbox" [(ngModel)]="data.sugar" name="sugar"><span class="checkmark" ></span></label>
       </div>
    </section>
    <section class="atc">
       <button [disabled]="!myForm.form.valid">Add to cart</button>
-      <div class="info" id="smth" onclick="dosmth()">
+      <div class="info" id="smth" (click)="showInfo()">
          <img src="assets/img/info.svg" alt="">
       </div>
    </section>
