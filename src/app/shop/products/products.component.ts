@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { CounterService } from '../../counter.service';
+import { CounterService } from '../../services/counter.service';
 
 @Component({
   selector: 'app-products',

@@ -1,4 +1,7 @@
 import { Component, Output, EventEmitter } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ProductsService } from 'src/app/services/products.service';
+import { Product } from 'src/app/types/types';
 
 @Component({
   selector: 'app-shop',
@@ -7,29 +10,18 @@ import { Component, Output, EventEmitter } from '@angular/core';
 })
 export class ShopComponent {
   @Output() public onAddToCart = new EventEmitter<string>();
+  public productList: Product[] | undefined;
 
-  public add(event: any) {
-    this.onAddToCart.emit('hey');
+  constructor(
+    private service: ProductsService,
+    private activatedRoute: ActivatedRoute
+  ) {
+    this.activatedRoute.data.subscribe((value) => {
+      this.service.products = value['products'].products;
+      console.log(value['products'].products);
+      this.productList = this.service.products;
+    });
   }
 
-  public productList: any = [
-    {
-      price: 8.99,
-      name: 'Extra Latte',
-      img: 'assets/img/Cup2.png',
-      options: [250, 500],
-    },
-    {
-      price: 9.99,
-      name: 'Cappuccino',
-      img: 'assets/img/Cup3.png',
-      options: [250, 500],
-    },
-    {
-      price: 7.29,
-      name: 'Moccachino',
-      img: 'assets/img/Cup1.png',
-      options: [250, 500],
-    },
-  ];
+  // constructor(private productsService: ProductsService) {}
 }

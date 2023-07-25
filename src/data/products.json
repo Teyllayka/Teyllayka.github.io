@@ -1,0 +1,23 @@
+{
+   "products":
+   [
+      {
+         "price": 8.99,
+         "name": "Extra Latte",
+         "img": "assets/img/Cup2.png",
+         "options": [250, 500]
+      },
+      {
+         "price": 9.99,
+         "name": "Cappuccino",
+         "img": "assets/img/Cup3.png",
+         "options": [250, 500]
+      },
+      {
+         "price": 7.29,
+         "name": "Moccachino",
+         "img": "assets/img/Cup1.png",
+         "options": [250, 500]
+      }
+   ]
+}

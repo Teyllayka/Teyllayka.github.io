@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { CounterService } from '../counter.service';
+import { CounterService } from '../services/counter.service';
 
 @Component({
   selector: 'app-header',

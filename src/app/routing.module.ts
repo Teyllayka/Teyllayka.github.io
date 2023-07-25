@@ -1,15 +1,29 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
+import { ProductResolver } from './resolvers/product.resolver';
 
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./shop/shop.module').then((m) => m.ShopModule),
+    resolve: { products: ProductResolver },
+    children: [
+      {
+        path: '',
+        loadChildren: () =>
+          import('./shop/shop.module').then((m) => m.ShopModule),
+      },
+    ],
   },
   {
     path: 'cart',
-    loadChildren: () => import('./cart/cart.module').then((m) => m.CartModule),
+    children: [
+      {
+        path: '',
+        loadChildren: () =>
+          import('./cart/cart.module').then((m) => m.CartModule),
+      },
+    ],
   },
 ];
 
@@ -17,5 +31,6 @@ const routes: Routes = [
   declarations: [],
   imports: [CommonModule, RouterModule.forRoot(routes)],
   exports: [RouterModule],
+  providers: [ProductResolver],
 })
 export class RoutingModule {}
