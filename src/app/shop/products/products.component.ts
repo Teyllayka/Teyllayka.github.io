@@ -1,8 +1,8 @@
-import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { Component, Input, OnInit } from '@angular/core';
 import { CounterService } from '../../services/counter.service';
 import { InfoService } from 'src/app/services/info.service';
-import { Details, Product } from 'src/app/types/types';
+import { Details } from 'src/app/types/types';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-products',
@@ -35,12 +35,18 @@ export class ProductsComponent implements OnInit {
 
   constructor(
     private counterService: CounterService,
-    private infoService: InfoService
+    private infoService: InfoService,
+    private cartService: CartService
   ) {}
 
   public onSubmit() {
-    console.log(this);
-    this.counterService.IncrementCounter(1);
+    this.counterService.IncrementCounter();
+    this.cartService.addProduct({
+      productId: this.id,
+      size: this.data.size,
+      sugar: this.data.sugar,
+      quantity: 1,
+    });
   }
 
   public showInfo() {

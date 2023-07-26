@@ -10,9 +10,15 @@ export class HeaderComponent {
   @Input() counter: number = 0;
 
   constructor(private counterService: CounterService) {
-    this.counterService.counterChange.subscribe(() => {
-      if (this.counter < 99) {
-        this.counter += 1;
+    this.counterService.counterChange.subscribe((n: number) => {
+      if (n > 0) {
+        if (this.counter < 99) {
+          this.counter += 1;
+        }
+      } else {
+        if (this.counter > 0) {
+          this.counter += n;
+        }
       }
     });
   }

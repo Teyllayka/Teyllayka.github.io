@@ -5,10 +5,10 @@ import { Observable } from 'rxjs';
 import { Product } from '../types/types';
 
 @Injectable({ providedIn: 'root' })
-export class ProductResolver implements Resolve<Observable<Product>> {
+export class ProductResolver implements Resolve<Observable<Product[]>> {
   constructor(private service: ProductsService) {}
 
-  resolve(): Observable<Product> {
+  resolve(): Observable<Product[]> {
     return this.service.fetchProducts();
   }
 }

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { ProductResolver } from './resolvers/product.resolver';
+import { CartResolver } from './resolvers/cart.resolver';
 
 const routes: Routes = [
   {
@@ -17,6 +18,7 @@ const routes: Routes = [
   },
   {
     path: 'cart',
+    resolve: { products: CartResolver },
     children: [
       {
         path: '',

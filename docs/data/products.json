@@ -23,7 +23,7 @@
       },
       {
         "id": 2,
-        "name": "Cappuccino",
+        "name": "Moccachino",
         "imgUrl": "assets/img/Cup1.png",
         "price": {
           "250": 7.99,
@@ -43,7 +43,7 @@
       },
       {
         "id": 3,
-        "name": "Moccachino",
+        "name": "Cappuccino",
         "imgUrl": "assets/img/Cup3.png",
         "price": {
           "250": 5.29,

@@ -1,13 +1,18 @@
-// export type Product = {
-//   id: number;
-//   name: string;
-//   img: string;
-//   price: [number, number];
-//   stamp: boolean;
-//   details: [string, number];
-// };
+export interface AddedProduct {
+  productId: number;
+  size: string;
+  sugar: boolean;
+  quantity: number;
+}
+
+export interface ProductInCart extends AddedProduct {
+  imgUrl: string;
+  name: string;
+  price: number;
+}
 
 export interface Product {
+  data: any;
   id: number;
   name: string;
   imgUrl: string;
