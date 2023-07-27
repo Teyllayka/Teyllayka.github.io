@@ -36,25 +36,24 @@ export class CartComponent {
   ) {
     this.activatedRoute.data.subscribe((value) => {
       this.cartService.products = value['products'];
+      const products = this.productService.products;
 
-      this.productService.products.subscribe((products) => {
-        this.cartService.products.forEach((productComponent) => {
-          const currentProduct = products.find(
-            (product) => product.id === productComponent.productId
-          );
+      this.cartService.products.forEach((productComponent) => {
+        const currentProduct = products.find(
+          (product) => product.id === productComponent.productId
+        );
 
-          const product: ProductInCart = {
-            productId: productComponent.productId,
-            size: productComponent.size,
-            sugar: productComponent.sugar,
-            quantity: productComponent.quantity,
-            imgUrl: currentProduct!.imgUrl,
-            name: currentProduct!.name,
-            price: currentProduct!.price[productComponent.size],
-          };
+        const product: ProductInCart = {
+          productId: productComponent.productId,
+          size: productComponent.size,
+          sugar: productComponent.sugar,
+          quantity: productComponent.quantity,
+          imgUrl: currentProduct!.imgUrl,
+          name: currentProduct!.name,
+          price: currentProduct!.price[productComponent.size],
+        };
 
-          this.productList.push(product);
-        });
+        this.productList.push(product);
       });
     });
   }
