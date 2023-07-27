@@ -17,47 +17,63 @@ export class CartItemComponent {
     private cartService: CartService
   ) {}
 
-  decrementInput() {
-    if (this.product.quantity > 1) {
-      this.product.quantity -= 1;
-      this.cartService.changeQuantity(
-        {
-          productId: this.product.productId,
-          size: this.product.size,
-          sugar: this.product.sugar,
-          quantity: this.product.quantity,
-        },
-        this.product.quantity
-      );
-      //console.log(this);
-      this.counterService.DecrementCounter(-1);
+  changeInput(value: number) {
+    if (
+      (value == -1 && this.product.quantity > 1) ||
+      (value == 1 && this.product.quantity < 99)
+    ) {
+      this.product.quantity += value;
+      this.updateQuantityAndCounter(value);
+    } else if (value == 0) {
+      this.remove(this.product);
+      this.counterService.SetCounter(-this.product.quantity);
+      this.cartService.removeProduct({
+        productId: this.product.productId,
+        size: this.product.size,
+        sugar: this.product.sugar,
+        quantity: this.product.quantity,
+      });
     }
   }
 
-  incrementInput() {
-    if (this.product.quantity < 99) {
-      this.product.quantity += 1;
-      this.cartService.changeQuantity(
-        {
-          productId: this.product.productId,
-          size: this.product.size,
-          sugar: this.product.sugar,
-          quantity: this.product.quantity,
-        },
-        this.product.quantity
-      );
-      this.counterService.IncrementCounter();
-    }
+  updateQuantityAndCounter(value: number) {
+    this.cartService.changeQuantity(
+      {
+        productId: this.product.productId,
+        size: this.product.size,
+        sugar: this.product.sugar,
+        quantity: this.product.quantity,
+      },
+      this.product.quantity
+    );
+
+    this.counterService.SetCounter(value);
   }
 
-  public removeProduct() {
-    this.remove(this.product);
-    this.counterService.DecrementCounter(-this.product.quantity);
-    this.cartService.removeProduct({
-      productId: this.product.productId,
-      size: this.product.size,
-      sugar: this.product.sugar,
-      quantity: this.product.quantity,
-    });
+  setInput(target: EventTarget | null) {
+    let element = <HTMLInputElement>target;
+    const parsedValue = parseInt(element.value, 10);
+    let setvalue = 0;
+
+    console.log(parsedValue, this);
+
+    if (parsedValue <= 0) {
+      setvalue = 1;
+    } else {
+      setvalue = parsedValue;
+    }
+
+    this.cartService.changeQuantity(
+      {
+        productId: this.product.productId,
+        size: this.product.size,
+        sugar: this.product.sugar,
+        quantity: this.product.quantity,
+      },
+      setvalue
+    );
+
+    this.counterService.SetCounter(setvalue - this.product.quantity);
+    this.product.quantity = setvalue;
   }
 }

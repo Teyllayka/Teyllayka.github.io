@@ -14,13 +14,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.counterService.counterChange.subscribe((n: number) => {
-      if (n > 0) {
-        this._counterValue += 1;
-      } else {
-        if (this._counterValue > 0) {
-          this._counterValue += n;
-        }
-      }
+      this._counterValue += n;
       this.displayCounter = this._counterValue > 99 ? 99 : this._counterValue;
     });
   }

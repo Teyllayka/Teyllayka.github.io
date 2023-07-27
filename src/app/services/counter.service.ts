@@ -6,11 +6,7 @@ import { Injectable, EventEmitter } from '@angular/core';
 export class CounterService {
   counterChange: EventEmitter<number> = new EventEmitter();
 
-  DecrementCounter(n: number) {
+  SetCounter(n: number) {
     this.counterChange.emit(n);
-  }
-
-  IncrementCounter() {
-    this.counterChange.emit(1);
   }
 }

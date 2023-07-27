@@ -40,7 +40,7 @@ export class ProductsComponent implements OnInit {
   ) {}
 
   public onSubmit() {
-    this.counterService.IncrementCounter();
+    this.counterService.SetCounter(1);
     this.cartService.addProduct({
       productId: this.id,
       size: this.data.size,
