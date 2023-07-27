@@ -20,6 +20,15 @@ export class CartComponent {
     );
   }
 
+  getTotalPrice(): number {
+    let total = 0;
+    this.productList.forEach((product) => {
+      total += product.price * product.quantity;
+    });
+    total += 5;
+    return total;
+  }
+
   constructor(
     private cartService: CartService,
     private activatedRoute: ActivatedRoute,

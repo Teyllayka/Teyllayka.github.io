@@ -15,7 +15,6 @@ export const slider = trigger('routeAnimations', [
 ]);
 
 function slideTo(direction: any) {
-  console.log(`slideTo direction: ${direction}`);
   const optional = { optional: true };
   return [
     query(

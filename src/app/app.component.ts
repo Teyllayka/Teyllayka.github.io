@@ -16,7 +16,6 @@ export class AppComponent {
       outlet &&
       outlet.activatedRouteData &&
       outlet.activatedRouteData['animation'];
-    console.log(animation_outlet);
     return animation_outlet;
   }
 }
