@@ -1,5 +1,5 @@
 
-<div class="popup" id="popup">
+<div class="popup" id="popup" [@openPopup]="isOpen? 'open' : 'closed' ">
    <section class="ppinfo">
       <div class="price">
          <h1>{{name}}</h1>

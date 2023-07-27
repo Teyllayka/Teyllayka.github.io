@@ -1,11 +1,36 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { InfoService } from '../services/info.service';
 import { Details, Product } from '../types/types';
+import {
+  animate,
+  state,
+  style,
+  transition,
+  trigger,
+} from '@angular/animations';
 
 @Component({
   selector: 'app-popup',
   templateUrl: './popup.component.html',
   styleUrls: ['./popup.component.scss'],
+  animations: [
+    trigger('openPopup', [
+      state(
+        'open',
+        style({
+          right: '0px',
+        })
+      ),
+      state(
+        'closed',
+        style({
+          right: '-100%',
+        })
+      ),
+      transition('* => closed', [animate('0.5s')]),
+      transition('* => open', [animate('0.5s')]),
+    ]),
+  ],
 })
 export class PopupComponent implements AfterViewInit {
   popupElement: HTMLElement | null | undefined;
@@ -15,6 +40,7 @@ export class PopupComponent implements AfterViewInit {
   public details!: Details;
   public imgUrl!: string;
   public price!: number;
+  public isOpen = false;
 
   ngAfterViewInit() {
     this.popupElement = document.getElementById('popup');
@@ -23,18 +49,11 @@ export class PopupComponent implements AfterViewInit {
       this.imgUrl = n.imgUrl;
       this.details = n.details;
       this.price = Object.values(n.price)[0];
-      console.log(n);
-      this.togglePopup();
+      this.isOpen = !this.isOpen;
     });
   }
 
   togglePopup(): void {
-    if (this.popupElement != null) {
-      if (this.popupElement.style.right === '0px') {
-        this.popupElement.style.right = '-100%'; // Close the popup
-      } else {
-        this.popupElement.style.right = '0px'; // Open the popup
-      }
-    }
+    this.isOpen = !this.isOpen;
   }
 }
