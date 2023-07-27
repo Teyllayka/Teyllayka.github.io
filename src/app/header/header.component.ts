@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CounterService } from '../services/counter.service';
 
 @Component({
@@ -6,20 +6,22 @@ import { CounterService } from '../services/counter.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent {
-  @Input() counter: number = 0;
+export class HeaderComponent implements OnInit {
+  private _counterValue: number = 0;
+  public displayCounter: number = 0;
 
-  constructor(private counterService: CounterService) {
+  constructor(private counterService: CounterService) {}
+
+  ngOnInit(): void {
     this.counterService.counterChange.subscribe((n: number) => {
       if (n > 0) {
-        if (this.counter < 99) {
-          this.counter += 1;
-        }
+        this._counterValue += 1;
       } else {
-        if (this.counter > 0) {
-          this.counter += n;
+        if (this._counterValue > 0) {
+          this._counterValue += n;
         }
       }
+      this.displayCounter = this._counterValue > 99 ? 99 : this._counterValue;
     });
   }
 }

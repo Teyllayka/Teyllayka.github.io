@@ -6,12 +6,12 @@
       <img src="assets/img/logo_small.svg" alt="">
    </a>
    <a class="cart" routerLink="/cart">
-      <div *ngIf="counter < 1">
+      <div *ngIf="displayCounter < 1">
          <p></p>
          <img src="assets/img/cart.svg" alt="" id="shown" class="shown">
       </div>
-      <div *ngIf="counter > 0">
-         <p id="counter">{{counter}}</p>
+      <div *ngIf="displayCounter > 0">
+         <p id="counter">{{displayCounter > 99 ? '99+' : displayCounter}}</p>
          <img src="assets/img/cart-full.svg" alt="" >
       </div>
       <h3>
