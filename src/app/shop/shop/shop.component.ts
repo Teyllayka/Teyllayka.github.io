@@ -17,11 +17,12 @@ export class ShopComponent {
     private activatedRoute: ActivatedRoute
   ) {
     this.activatedRoute.data.subscribe((value) => {
-      this.service.products = value['products'].products;
+      this.service.products.next(value['products'].products);
       console.log(value['products'].products);
-      this.productList = this.service.products;
+    });
+
+    this.service.products.subscribe((products) => {
+      this.productList = products;
     });
   }
-
-  // constructor(private productsService: ProductsService) {}
 }
