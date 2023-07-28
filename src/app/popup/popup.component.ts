@@ -1,6 +1,8 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { InfoService } from '../services/info.service';
-import { Details, Product } from '../types/types';
+import { Details } from '../types/types';
+import { Router } from '@angular/router';
+
 import {
   animate,
   state,
@@ -33,17 +35,26 @@ import {
   ],
 })
 export class PopupComponent implements AfterViewInit {
-  popupElement: HTMLElement | null | undefined;
+  popupElement!: HTMLElement;
   constructor(private infoService: InfoService) {}
 
   public name!: string;
-  public details!: Details;
+  public details: Details = {
+    calories: 0,
+    totalFat: 0,
+    cholesterol: 0,
+    sodium: 0,
+    totalCarbohydrate: 0,
+    protein: 0,
+    vitaminD: 0,
+    cancium: 0,
+  };
   public imgUrl!: string;
   public price!: number;
   public isOpen = false;
 
   ngAfterViewInit() {
-    this.popupElement = document.getElementById('popup');
+    this.popupElement = document.getElementById('popup')!;
     this.infoService.displayInfo.subscribe((n) => {
       this.name = n.name;
       this.imgUrl = n.imgUrl;

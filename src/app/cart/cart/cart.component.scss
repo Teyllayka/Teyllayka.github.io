@@ -392,3 +392,18 @@ app-cart-item {
    
    }
 }
+
+.empty {
+   margin:0;
+   color: var(--clr-db);
+   font-family: var(--fnt-family-eczar);
+   font-size: var(--fnt-size-h1);
+   font-style: normal;
+   font-weight: 700;
+   line-height: 57.6px; /* 57.6px */
+   inline-size: 70%;
+
+   @media screen and (max-width: 1200px) {
+      font-size: 32px;
+   }
+}

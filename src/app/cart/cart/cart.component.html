@@ -1,14 +1,14 @@
 
-<main class="container">
+<main class="container" >
    <form class="cart">
       <h1>Shopping Cart</h1>
-      <section class="summary">
+      <section class="summary" *ngIf="productList.length > 0 else emptyCart">
          <ul class="cart-items">
             <li *ngFor="let product of productList">
                <app-cart-item [product]="product" [remove]="removeFromList.bind(this)"></app-cart-item>
             </li>
          </ul>
-         <div class="checkout-container">
+         <div class="checkout-container" >
             <div class="checkout">
                <h4>Checkout</h4>
                <ul class="rates">
@@ -29,5 +29,8 @@
             </div>
          </div>
       </section>
+      <ng-template #emptyCart>
+         <div class="empty">Your cart is empty.</div>
+       </ng-template>
    </form>
 </main>

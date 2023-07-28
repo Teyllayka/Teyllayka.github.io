@@ -17,6 +17,15 @@ export class CartItemComponent {
     private cartService: CartService
   ) {}
 
+  private productData() {
+    return {
+      productId: this.product.productId,
+      size: this.product.size,
+      sugar: this.product.sugar,
+      quantity: this.product.quantity,
+    };
+  }
+
   changeInput(value: number) {
     if (
       (value == -1 && this.product.quantity > 1) ||
@@ -24,56 +33,32 @@ export class CartItemComponent {
     ) {
       this.product.quantity += value;
       this.updateQuantityAndCounter(value);
-    } else if (value == 0) {
+    } else if (value == 0 || (value == -1 && this.product.quantity == 1)) {
       this.remove(this.product);
-      this.counterService.SetCounter(-this.product.quantity);
-      this.cartService.removeProduct({
-        productId: this.product.productId,
-        size: this.product.size,
-        sugar: this.product.sugar,
-        quantity: this.product.quantity,
-      });
+      this.counterService.SetCounter(-this.productData().quantity);
+      this.cartService.removeProduct(this.productData());
     }
   }
 
   updateQuantityAndCounter(value: number) {
-    this.cartService.changeQuantity(
-      {
-        productId: this.product.productId,
-        size: this.product.size,
-        sugar: this.product.sugar,
-        quantity: this.product.quantity,
-      },
-      this.product.quantity
-    );
-
+    this.cartService.changeQuantity(this.productData(), this.product.quantity);
     this.counterService.SetCounter(value);
   }
 
   setInput(target: EventTarget | null) {
     let element = <HTMLInputElement>target;
     const parsedValue = parseInt(element.value, 10);
-    let setvalue = 0;
-
-    console.log(parsedValue, this);
 
     if (parsedValue <= 0) {
-      setvalue = 1;
+      this.changeInput(0);
     } else {
-      setvalue = parsedValue;
+      let diff = parsedValue - this.product.quantity;
+      this.product.quantity = parsedValue;
+      this.cartService.changeQuantity(
+        this.productData(),
+        this.product.quantity
+      );
+      this.counterService.SetCounter(diff);
     }
-
-    this.cartService.changeQuantity(
-      {
-        productId: this.product.productId,
-        size: this.product.size,
-        sugar: this.product.sugar,
-        quantity: this.product.quantity,
-      },
-      setvalue
-    );
-
-    this.counterService.SetCounter(setvalue - this.product.quantity);
-    this.product.quantity = setvalue;
   }
 }

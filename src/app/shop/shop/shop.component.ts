@@ -22,6 +22,4 @@ export class ShopComponent {
       this.productList = this.service.products;
     });
   }
-
-  // constructor(private productsService: ProductsService) {}
 }

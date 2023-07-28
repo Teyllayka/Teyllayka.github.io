@@ -1,9 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CartService } from 'src/app/services/cart.service';
-import { CounterService } from 'src/app/services/counter.service';
 import { ProductsService } from 'src/app/services/products.service';
-import { Product, ProductInCart } from 'src/app/types/types';
+import { ProductInCart } from 'src/app/types/types';
 
 @Component({
   selector: 'app-cart',

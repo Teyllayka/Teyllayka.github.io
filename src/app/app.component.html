@@ -1,5 +1,5 @@
 <app-header></app-header>
-<app-popup></app-popup>
+<app-popup *ngIf="isHomePage()"></app-popup>
 <main [@routeAnimations]="prepareRoute(outlet)">
    <router-outlet #outlet="outlet"></router-outlet>
 </main>

@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { slider } from './route-animations';
 
 @Component({
@@ -10,6 +10,12 @@ import { slider } from './route-animations';
 })
 export class AppComponent {
   title = 'myApp';
+
+  constructor(private router: Router) {}
+
+  isHomePage(): boolean {
+    return this.router.url === '/';
+  }
 
   prepareRoute(outlet: RouterOutlet) {
     let animation_outlet =
