@@ -1,9 +1,9 @@
 <header>
    <a class="icon" routerLink="/">
-     <img src="assets/img/logo.svg" alt="">
+      <img [src]="isSelected ? 'assets/img/logo_selected.svg' : 'assets/img/logo.svg'" alt="">
    </a>
    <a class="icon-small" routerLink="/">
-      <img src="assets/img/logo_small.svg" alt="">
+      <img [src]="isSelected ? 'assets/img/logo_selected_small.svg' : 'assets/img/logo_small.svg'" alt="">
    </a>
    <a class="cart" routerLink="/cart">
       <div *ngIf="displayCounter < 1">
@@ -14,7 +14,7 @@
          <p id="counter">{{displayCounter > 99 ? '99' : displayCounter}}</p>
          <img src="assets/img/cart-full.svg" alt="" >
       </div>
-      <h3>
+      <h3 [ngStyle]="!isSelected ? {color: '#FF7733'} : {color: '#023A6B'}">
          Shopping Cart
       </h3>
    </a>

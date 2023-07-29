@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CounterService } from '../services/counter.service';
 
 @Component({
@@ -9,6 +9,7 @@ import { CounterService } from '../services/counter.service';
 export class HeaderComponent implements OnInit {
   private _counterValue: number = 0;
   public displayCounter: number = 0;
+  @Input() isSelected: Boolean = true;
 
   constructor(private counterService: CounterService) {}
 
