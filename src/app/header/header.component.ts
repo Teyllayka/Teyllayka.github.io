@@ -10,6 +10,8 @@ export class HeaderComponent implements OnInit {
   private _counterValue: number = 0;
   public displayCounter: number = 0;
   @Input() isSelected: Boolean = true;
+  iconHovered = false;
+  cartHovered = false;
 
   constructor(private counterService: CounterService) {}
 

@@ -11,6 +11,7 @@ import { ProductInCart } from 'src/app/types/types';
 export class CartItemComponent {
   @Input() product!: ProductInCart;
   @Input() remove!: Function;
+  isHovered = false;
 
   constructor(
     private counterService: CounterService,
