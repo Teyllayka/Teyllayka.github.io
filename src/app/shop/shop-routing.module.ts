@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { ShopComponent } from './shop/shop.component'; // reference ShopComponent instead of ShopModule
+import { ShopComponent } from './shop/shop.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: ShopComponent, // Add ShopComponent here
+    component: ShopComponent,
   },
 ];
 
