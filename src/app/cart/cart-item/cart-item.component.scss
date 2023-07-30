@@ -26,9 +26,7 @@
 .quantity {
    border-radius: 24px;
    border: 2px solid var(--yellow, #FFBD5C);
-   background: var(--light-cream, #FEF2E8);
    display: flex;
-   justify-content: center;
    align-items: center;
 
    &-container {
@@ -58,6 +56,7 @@
          }
 
          &:hover {
+
             svg {
                fill: #FFBD5C;
             }
@@ -78,7 +77,6 @@
    input {
       background-color: transparent;
       border: none;
-      width: 45px;
       text-align: center;
       margin: 12px 0px;
       padding-bottom: 5px;
