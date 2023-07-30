@@ -42,6 +42,7 @@
       <img [src]="isHovered ? 'assets/img/remove_hovered.svg' : 'assets/img/remove.svg'" 
            (mouseover)="isHovered = true" 
            (mouseout)="isHovered = false" 
+           (click)="changeInput(0)"
            alt="">
     </button>
 </div>
